@@ -1,0 +1,165 @@
+/* Coolors Exported Palette - https://coolors.co/50b693-fdd068-e8476f-000000-404040-666666-f8f8f8-ffffff */
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    color: rgb(47, 47, 47);
+}
+h1, h2{
+    color: #53474a;
+}
+
+.navbar h2 {
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    padding: 20px;
+    background-color: #457a78;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: none;
+    background-color: #457a78;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    position: fixed;
+    z-index: 1;
+    opacity: .93;
+}
+nav.open {
+    display: block;
+}
+
+
+
+.open-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: right;
+    color: white;
+    background-color: transparent;
+}
+
+.close-button{
+    display: block;
+    border: none;
+    padding: 24px;
+    float: right;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: right;
+    color: white;
+    background-color: transparent;
+}
+
+nav ul {
+    padding: 0;
+    margin-top: 10vh;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav li.active {
+    background-color: rgb(87, 86, 86);
+}
+
+nav li:hover {
+    background-color: gray;
+}
+
+
+nav a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    background-color: #fbf9f9;
+}
+.main {
+    max-width: 1300px;
+    padding: 20px;
+    margin: auto;
+    background-color: #fbf9f9;
+}
+h2 {
+    font-size: 18px;
+}
+hr {
+    margin-bottom: 20px;
+}
+.main ol {
+    margin-left: 20px;
+}
+
+        textarea {
+            margin: 20px;
+            width: 80%;
+            height: 150px;
+            background-color: lightyellow;
+        }
+
+        details {
+            margin-bottom: 20px;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        details h4 { 
+            margin-top: 10px;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        details li, details p {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+.footer{
+    margin:auto;
+    max-width: 1300px;
+    padding: 20px;
+    background-color: #457a78;
+}
+.footer h3 {
+    color: #FFFFFF;
+    text-align: center;
+}
+

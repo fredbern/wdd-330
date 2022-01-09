@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script src="js/lazyload.js" defer></script>
+    <script src="js/main.js"></script>
+    <script>
+        function loadStory() {
+            const storyName = document.getElementById("name_input").value;
+            const storyHTML = localStorage.getItem("storyName");
+            document.getElementById("story_editor").value = storyHTML;
+        }
+
+        function saveStory() {
+            const storyName = document.getElementById("name_input").value;
+            const storyHTML = document.getElementById("story_editor").value;
+            localStorage.setItem(storyName, storyHTML);
+        }
+
+        function displayStory() {
+            const storyHTML = document.getElementById("story_editor").value;
+            document.getElementById("story_display").innerHTML = storyHTML;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="sitename">
+            <h2>WDD 330</h2>
+        </div>
+        <nav id="primaryNav">
+            <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+            <ul>
+                <li class="active"><a class="active" href="/index.html">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+    </div>
+    <div class="main">
+        <h1>Story Editor</h1>
+        Story Name:<input id="name_input"></input>
+        <section>
+            <button onclick="loadStory()">Find and Edit It</button>
+            <button onclick="saveStory()">Save It</button>
+            <button onclick="displayStory()">Display It</button>
+        </section>
+    </div>
+
+    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+    <section id="story_display"></section>
+    <script src="js/home.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
