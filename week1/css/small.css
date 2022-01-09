@@ -11,19 +11,29 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-p, h1, h2, h3, h4, h5, h6{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: rgb(47, 47, 47);
 }
-h1, h2{
+
+h1,
+h2 {
     color: #53474a;
 }
 
@@ -51,6 +61,7 @@ nav {
     z-index: 1;
     opacity: .93;
 }
+
 nav.open {
     display: block;
 }
@@ -68,7 +79,7 @@ nav.open {
     background-color: transparent;
 }
 
-.close-button{
+.close-button {
     display: block;
     border: none;
     padding: 24px;
@@ -106,60 +117,79 @@ nav a {
     font-size: 18px;
 }
 
-.container{
+.container {
     max-width: 1300px;
     margin: auto;
     background-color: #fbf9f9;
 }
+
 .main {
     max-width: 1300px;
     padding: 20px;
     margin: auto;
     background-color: #fbf9f9;
 }
+
 h2 {
     font-size: 18px;
 }
+
 hr {
     margin-bottom: 20px;
 }
+
 .main ol {
     margin-left: 20px;
 }
+label {
+    margin: 5px 0;
+}
+label input {
+    margin-left: 5px;
+}
+button {
+    margin: 10px 0;
+    margin-right: 10px;
+    padding: 6px;
+}
+textarea {
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    height: 150px;
+    background-color: lightyellow;
+}
 
-        textarea {
-            margin: 20px;
-            width: 80%;
-            height: 150px;
-            background-color: lightyellow;
-        }
+details {
+    margin-bottom: 20px;
+}
 
-        details {
-            margin-bottom: 20px;
-        }
+summary {
+    font-weight: bold;
+    font-size: 20px;
+}
 
-        summary {
-            font-weight: bold;
-            font-size: 20px;
-        }
-        details h4 { 
-            margin-top: 10px;
-            margin-left: 20px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        details li, details p {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-.footer{
-    margin:auto;
+details h4 {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+details li,
+details p {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin: auto;
     max-width: 1300px;
     padding: 20px;
     background-color: #457a78;
 }
+
 .footer h3 {
     color: #FFFFFF;
     text-align: center;
 }
-

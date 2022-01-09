@@ -19,6 +19,7 @@
 
     <script src="js/lazyload.js" defer></script>
     <script src="js/main.js"></script>
+
     <script>
         function loadStory() {
             const storyName = document.getElementById("name_input").value;
@@ -56,16 +57,17 @@
     </div>
     <div class="main">
         <h1>Story Editor</h1>
-        Story Name:<input id="name_input"></input>
+        <label>Story Name:<input id="name_input"></input></label>
         <section>
             <button onclick="loadStory()">Find and Edit It</button>
             <button onclick="saveStory()">Save It</button>
             <button onclick="displayStory()">Display It</button>
         </section>
-    </div>
 
-    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
-    <section id="story_display"></section>
+
+        <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+        <section id="story_display"></section>
+    </div>
     <script src="js/home.js"></script>
     <script src="js/nav.js"></script>
 </body>
