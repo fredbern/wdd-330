@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script>
+        function calculate(inputNuber) {
+            function equa(inputNuber) {
+                const w = 1 + parseFloat(inputNuber);
+                const a = Array.from(Array(w).keys());
+                let sum = 0;
+                for (let i = 0; i < a.length; i++) {
+                    sum += a[i];
+                }
+                console.log(sum);
+                return sum;
+            }
+            const inputNumber = document.getElementById("number_input").value;
+            const nValue = equa(inputNumber);
+            document.getElementById('answer').innerHTML = nValue;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="sitename">
+            <h2>WDD 330</h2>
+        </div>
+        <nav id="primaryNav">
+            <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+            <ul>
+                <li class="active"><a class="active" href="../">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+    </div>
+    <div class="main">
+        <h1>Calculating the Array</h1>
+        <label>Input Number:<input id="number_input" type="number"></input></label>
+        <section>
+            <button onclick="calculate()">Calculate</button>
+        </section>
+
+        <section id="answer"></section>
+    </div>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
