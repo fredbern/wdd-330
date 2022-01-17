@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,31 +15,10 @@
     <link rel="stylesheet" href="css/medium.css">
     <link rel="stylesheet" href="css/large.css">
     <link rel="shortcut icon" href="favicon.ico">
-    <script>
-        function checkNumber(x,y) {
-            function equa(x, y) {
-                if (x == "" && y == "") {
-                }else {
-                    const firstNumber = parseFloat(x);
-                    const secondNumber = parseFloat(y);
-                    return firstNumber + secondNumber;
-                }
-        };
 
-
-            const firstNumber = document.getElementById("first_input").value;
-            const secondNumber = document.getElementById("second_input").value;
-            const nValue = equa(firstNumber, secondNumber);
-
-            if (nValue == null) {
-                document.getElementById('answer').innerHTML = 'you are missing an input. Please, input';
-            } else {
-                document.getElementById('answer').innerHTML = `${firstNumber} + ${secondNumber} = ${nValue}`;
-            }
-            
-    </script>
+    <script src="js/lazyload.js" defer></script>
+    <script src="js/main.js"></script>
 </head>
-
 <body>
     <div class="navbar">
         <div class="sitename">
@@ -58,12 +36,14 @@
     </div>
     <div class="main">
         <style>
-            #first_input, #second_input {
+            #first_input,
+            #second_input {
                 width: 60px;
                 display: block;
                 margin-bottom: 10px;
                 margin-left: 0;
             }
+
             #button {
                 width: 60px;
                 padding: 2px;
@@ -82,5 +62,4 @@
     </div>
     <script src="js/nav.js"></script>
 </body>
-
 </html>
