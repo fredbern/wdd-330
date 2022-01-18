@@ -16,24 +16,6 @@
     <link rel="stylesheet" href="css/medium.css">
     <link rel="stylesheet" href="css/large.css">
     <link rel="shortcut icon" href="favicon.ico">
-    <script>
-        function calculate(inputNuber) {
-            function equa(inputNuber) {
-                const w = 1 + parseFloat(inputNuber);
-                const a = Array.from(Array(w).keys());
-                let sum = 0;
-                for (let i = 0; i < a.length; i++) {
-                    sum += a[i];
-                }
-                console.log(sum);
-                return sum;
-            }
-            const inputNumber = document.getElementById("number_input").value;
-            const nValue = equa(inputNumber);
-            document.getElementById('answer').innerHTML = nValue;
-
-        }
-    </script>
 </head>
 
 <body>
@@ -52,13 +34,50 @@
         <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
     </div>
     <div class="main">
-        <h1>Calculating the Array</h1>
-        <label>Input Number:<input id="number_input" type="number"></input></label>
+
+        <h1>Quiz Exercise From the Reading</h1>
         <section>
-            <button onclick="calculate()">Calculate</button>
+            <button id="button" onclick="start(quiz)">Start Quiz</button>
+            <div id="score"></div>
         </section>
 
-        <section id="answer"></section>
+        <script>
+            const quiz = [
+                ["What is the current LDS President's first name?", "Russell"],
+                ["What is the first LDS President's first name", "Joseph"]
+            ];
+
+            function start(quiz) {
+                let score = 0;
+
+                // main game loop
+                for (const [question, answer] of quiz) {
+                    const response = ask(question);
+                    check(response, answer);
+                }
+                // end of main game loop
+
+                gameOver();
+
+                // function declarations
+                function ask(question) {
+                    return prompt(question);
+                }
+
+                function check(response, answer) {
+                    if (response === answer) {
+                        alert('Correct!');
+                        score++;
+                    } else {
+                        alert(`Wrong! The correct answer was ${answer}`);
+                    }
+                }
+
+                function gameOver() {
+                    document.getElementById('score').innerHTML = `Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`;
+                }
+            }
+        </script>
     </div>
     <script src="js/nav.js"></script>
 </body>
