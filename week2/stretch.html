@@ -49,6 +49,45 @@
                 padding: 2px;
             }
         </style>
+        <!--Preview function-->
+        <h1>Input and Display Number</h1>
+        <label>Input Number:<input id="inputToDisplay" type="number"></input></label>
+        <section>
+            <button onclick="display()">Display</button>
+        </section>
+        <section id="display"></section>
+        <hr>
+        <!--Adding Arrays-->
+        <h1>Calculating the Array</h1>
+        <label>Input Number:<input id="array_number_input" type="number"></input></label>
+        <section>
+            <button onclick="calculate()">Calculate</button>
+        </section>
+        <section id="arrayAnswer"></section>
+        <hr>
+    <!--Adding machine-->
+            <style>
+                #first_input, #second_input {
+                    width: 60px;
+                    display: block;
+                    margin-bottom: 10px;
+                    margin-left: 0;
+                }
+                #button {
+                    width: 60px;
+                    padding: 2px;
+                }
+            </style>
+            <h1>Adding Machine</h1>
+            <label>First Number:<input id="f_input" type="number"></input></label>
+            <label>Second Number:<input id="s_input" type="number"></input></label>
+            <section>
+                <button id="button" onclick="addMachine()">+</button>
+            </section>
+    
+            <section id="addMDisplay"></section>
+        <hr>
+        <!--Stretch Exercise Starts Here-->
         <h1>Stretch Exercise: Calculator</h1>
         <label>First Number:<input id="first_input" type="number"></input></label>
         <label>Second Number:<input id="second_input" type="number"></input></label>
@@ -59,17 +98,74 @@
             <button id="divide" onclick="divide()">/</button>
         </section>
 
-        <section id="answer"></section>
+        <section id="stretchAnswer"></section>
     </div>
     <script src="js/nav.js"></script>
     <script>
+        //Input and display fuction starts here
+        function display() {
+            const display = document.getElementById('inputToDisplay').value;
+            if (display == "") {
+                document.getElementById('display').innerHTML = 'Please, input a number.';
+            }else{
+                document.getElementById('display').innerHTML = display;
+            }
+        }
+        //Adding values in the array
+        function calculate(inputNuber) {
+            const inputNumber = document.getElementById("array_number_input").value;
+            if (inputNumber == "") {
+                document.getElementById('arrayAnswer').innerHTML = 'Please, input a number';
+            }else{
+                function equa(inputNuber) {
+                const w = 1 + parseFloat(inputNuber);
+                const a = Array.from(Array(w).keys());
+                let sum = 0;
+                for (let i = 0; i < a.length; i++) {
+                    sum += a[i];
+                }
+                console.log(sum);
+                return sum;
+            }
+            
+            const nValue = equa(inputNumber);
+            document.getElementById('arrayAnswer').innerHTML = nValue;
+
+            }
+
+        }
+        //Adding machine
+        function addMachine() {
+            function addM(x, y) {
+                if (x == "" && y == "") {
+                }else {
+                    const firstNumber = parseFloat(x);
+                    const secondNumber = parseFloat(y);
+                    return firstNumber + secondNumber;
+                }
+                
+            }
+            const firstNumber = document.getElementById("f_input").value;
+            const secondNumber = document.getElementById("s_input").value;
+            const nValue = addM(firstNumber, secondNumber);
+
+            if (nValue == null) {
+                document.getElementById('addMDisplay').innerHTML = 'you are missing an input. Please, input';
+            } else {
+                document.getElementById('addMDisplay').innerHTML = `${firstNumber} + ${secondNumber} = ${nValue}`;
+            }
+            
+
+        }
+    
+        //stretch excercise starts here
         function adding() {
             const fNumber = parseFloat(document.getElementById('first_input').value);
             const sNumber = parseFloat(document.getElementById('second_input').value);
             if (fNumber == "" || sNumber == "") {
-                document.getElementById('answer').innerHTML = 'Please, input two numbers.'
+                document.getElementById('stretchAnswer').innerHTML = 'Please, input two numbers.'
             }else{
-                document.getElementById('answer').innerHTML = `${fNumber} + ${sNumber} = ${fNumber + sNumber}`;
+                document.getElementById('stretchAnswer').innerHTML = `${fNumber} + ${sNumber} = ${fNumber + sNumber}`;
             }
         }
         function minus() {
@@ -77,9 +173,9 @@
             const sNumber = document.getElementById('second_input').value;
             
             if (fNumber == "" || sNumber == "") {
-                document.getElementById('answer').innerHTML = 'Please, input two numbers.'
+                document.getElementById('stretchAnswer').innerHTML = 'Please, input two numbers.'
             }else{
-                document.getElementById('answer').innerHTML = `${fNumber} - ${sNumber} = ${fNumber - sNumber}`;
+                document.getElementById('stretchAnswer').innerHTML = `${fNumber} - ${sNumber} = ${fNumber - sNumber}`;
             }
         }
         function times() {
@@ -91,9 +187,9 @@
             const product = multiply();
 
             if (fNumber == "" || sNumber == "") {
-                document.getElementById('answer').innerHTML = 'Please, input two numbers.'
+                document.getElementById('stretchAnswer').innerHTML = 'Please, input two numbers.'
             }else{
-                document.getElementById('answer').innerHTML = `${fNumber} X ${sNumber} = ${product}`;
+                document.getElementById('stretchAnswer').innerHTML = `${fNumber} X ${sNumber} = ${product}`;
             }
         }
         function divide() {
@@ -109,9 +205,9 @@
             const remainder = remain();
 
             if (fNumber == "" || sNumber == "") {
-                document.getElementById('answer').innerHTML = 'Please, input two numbers.'
+                document.getElementById('stretchAnswer').innerHTML = 'Please, input two numbers.'
             }else{
-                document.getElementById('answer').innerHTML = `${fNumber} / ${sNumber} = ${dividend}; The remainder is ${remainder}`;
+                document.getElementById('stretchAnswer').innerHTML = `${fNumber} / ${sNumber} = ${dividend}; The remainder is ${remainder}`;
             }
         }
     </script>
