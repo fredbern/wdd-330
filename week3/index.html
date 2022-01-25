@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script src="js/lazyload.js" defer></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="sitename">
+                <h2>WDD 330</h2>
+            </div>
+            <nav id="primaryNav">
+                <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+                <ul>
+                    <li class="active"><a class="active" href="../">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+        </div>
+    </div>
+    <style>
+        .sub details {
+            margin: 0;
+            padding: 0;
+        }
+        .sub summary {
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+            font-size: small;
+            font-weight: bold;
+        }
+        .sub div {
+            margin-left: 25px;
+            margin-bottom: 0;
+            padding-top: 15px;
+            
+            font-size: small;
+        }
+
+        .sub h6{
+            margin-top: 20px;
+            margin-left: 26px;
+            padding: 0;
+        }
+        code p {
+            margin: 3px 0;
+        }
+    </style>
+    <div class="container">
+        <div class="other-contents">
+            <div class="main">
+                <h1>My notes</h1>
+                <h2>Week 03 - Submission</h2>
+                <hr>
+                <details>
+                    <summary>Reading notes</summary>
+                    <details class="sub">
+                        <summary>Object Methods</summary>
+                        <div class="code">
+                            <div class="codebox__code" data-code="1">
+                                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+                        name<span class="token operator">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
+                        age<span class="token operator">:</span> <span class="token number">30</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                      
+                      <em class="block-highlight">user<span class="token punctuation">.</span><span class="token function-variable function">sayHi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">;</span></em>
+                      
+                      user<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Hello!</span></code></pre>
+                              </div>
+                        </div>
+                        <h6>Method Shorthand</h6>
+                        <div class="code">
+                            <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token comment">// these objects do the same</span>
+
+                                user <span class="token operator">=</span> <span class="token punctuation">{</span>
+                                  <span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                  <span class="token punctuation">}</span>
+                                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                                
+                                <span class="token comment">// method shorthand looks better, right?</span>
+                                user <span class="token operator">=</span> <span class="token punctuation">{</span>
+                                <em class="block-highlight">  <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// same as "sayHi: function(){...}"</span></em>
+                                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                  <span class="token punctuation">}</span>
+                                <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+                            </div>
+
+                        <h6>“this” in methods</h6>
+                        <div class="code">
+                            <div class="codebox__code" data-code="1">
+                                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+                        name<span class="token operator">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
+                        age<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+                      
+                        <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      <em class="block-highlight">    <span class="token comment">// "this" is the "current object"</span>
+                          <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></em>
+                        <span class="token punctuation">}</span>
+                      
+                      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                      
+                      user<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John</span></code></pre>
+                              </div>
+
+                        </div>
+                    </details>
+                    <details class="sub">
+                        <summary>Objects</summary>
+                        <p></p>
+                        <h6>Creating Objects</h6>
+                        <div class="code">
+                            <code>const spiderman = {};</code>
+                            <br> <br>
+                            <code>const spiderman = new Object();</code>
+                        </div>
+                        <h6>Accessing Properties</h6>
+                        <div class="code">
+                            <code>You can access it with two ways:</code>
+                            <br><br>
+                            <code>superman.name</code>
+                            <br>
+                            <code>supermant['name']</code>
+                        </div>
+                        <h6>Computed Properties</h6>
+                        <div class="code">
+                            <code>const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' };</code>
+                        </div>
+                        <h6>Calling a Method</h6>
+                        <div class="code">
+                            <code>superman.fly()</code>
+                            <br>    
+                            <code>superman['fly']()</code>
+                        </div>
+                        <h6>Finding all the Properties of an Object</h6>
+                        <div class="code">
+                            <code>for(const key in superman) {<br>
+                                console.log(key + ": " + superman[key]);<br>
+                            }
+
+                            <br><br>
+                            <p>To make sure all properties are returned.</p>
+                            <br>
+                            for(const key in superman) {<br>
+                                if(superman.hasOwnProperty(key)){<br>
+                                    console.log(key + ": " + superman[key]);<br>
+                                }
+                            }
+                            <br>
+                            <br>
+                            <p>To return the array of keys, use the following code:</p>
+                            <br>
+                            for(const key of Object.keys(superman)) {<br>
+                                console.log(key);<br>
+                            }
+
+                            </code>
+                        </div>
+                        <h6>Adding Properties</h6>
+                        <div class="code">
+                            <code>superman.city = 'Metropolis';</code>
+                        </div>
+                        <h6>Changing Properties</h6>
+                        <div class="code">
+                            <code>
+                                superman['real name'] = 'Kal-El';
+                            </code>
+                        </div>
+                        <h6>Removing Properties</h6>
+                        <div class="code">
+                            <code>
+                                delete superman.fly
+                            </code>
+                        </div>
+                        <h6>Nested Objects</h6>
+                        <div class="code">
+                            <code>
+                                const jla = {<br>
+                                    superman: { realName: 'Clark Kent' },<br>
+                                    batman: { realName: 'Bruce Wayne' },<br>
+                                    wonderWoman: { realName: 'Diana Prince" },<br>
+                                    flash: { realName: 'Barry Allen' },<br>
+                                    aquaman: { realName: 'Arthur Curry' },<br>
+                                }
+                            </code>
+                        </div>
+                        <h6>Objects as Parameters to Functions</h6>
+                        <div class="code">
+                            <code>
+                                function greet({greeting,name,age}) {<br>
+                                    return `${greeting}! My name is ${name} and I am ${age} years old.`;<br>
+                                }
+                            </code>
+                        </div>
+                    </details>
+                    <details class="sub">
+                        <summary>Events</summary>
+                    </details>
+                    <details class="sub">
+                        <summary>JSON</summary>
+                    </details>
+                </details>
+                <details>
+                    <summary>Weekly Report</summary>
+                    <h4>What did I do since the last meeting?</4>
+                    <p>Last week, I was reading more on reading. I also practicing on coding some the examples in the assigned reading.</p>
+                    <h4>What am going to do next?</4>
+                    <p>I want to make a good schedule for week four assignments.</p>
+                    <h4>What are my blockers?</4>
+                    <p>I did not have any blocker except work was very tough. It exausted me out that I just come home and sleep after.</p>
+                </details>
+                <details>
+                    <summary>Exercises</summary>
+                    <ul>
+                    <li><cite><a href="excercise.html">Exercise from the reading</a></cite></li>
+                    <li><cite><a href="stretch.html">Stretch Exercise</a></cite></li>
+                    <li><cite><a href="solution.html">Group Solution</a></cite></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Questions</summary>
+                    <ul>
+                    <li><cite>No Question</cite></li>
+                    </ul>
+                </details>
+            </div>
+    </div>
+
+    <div class="footer">
+        <h3>January 09, 2022 | WDD - 330<br>By Berny Fred</h3>
+    </div>
+    <script src="js/home.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        loadIndex();
+    </script>
+</body>
+</html>
