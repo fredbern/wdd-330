@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
     <script src="js/lazyload.js" defer></script>
     <script src="js/main.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
@@ -41,6 +43,7 @@
             margin: 0;
             padding: 0;
         }
+
         .sub summary {
             margin: 0;
             padding: 0;
@@ -48,19 +51,21 @@
             font-size: small;
             font-weight: bold;
         }
+
         .sub div {
             margin-left: 25px;
             margin-bottom: 0;
             padding-top: 15px;
-            
+
             font-size: small;
         }
 
-        .sub h6{
+        .sub h6 {
             margin-top: 20px;
             margin-left: 26px;
             padding: 0;
         }
+
         code p {
             margin: 3px 0;
         }
@@ -76,54 +81,36 @@
                     <details class="sub">
                         <summary>Object Methods</summary>
                         <div class="code">
-                            <div class="codebox__code" data-code="1">
-                                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
-                        name<span class="token operator">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
-                        age<span class="token operator">:</span> <span class="token number">30</span>
-                      <span class="token punctuation">}</span><span class="token punctuation">;</span>
-                      
-                      <em class="block-highlight">user<span class="token punctuation">.</span><span class="token function-variable function">sayHi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                      <span class="token punctuation">}</span><span class="token punctuation">;</span></em>
-                      
-                      user<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Hello!</span></code></pre>
-                              </div>
-                        </div>
-                        <h6>Method Shorthand</h6>
-                        <div class="code">
-                            <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token comment">// these objects do the same</span>
+                            <code>
+                                let user = {<br>
+                                name: "John",<br>
+                                age: 30 <br>
+                                }; <br>
 
-                                user <span class="token operator">=</span> <span class="token punctuation">{</span>
-                                  <span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                  <span class="token punctuation">}</span>
-                                <span class="token punctuation">}</span><span class="token punctuation">;</span>
-                                
-                                <span class="token comment">// method shorthand looks better, right?</span>
-                                user <span class="token operator">=</span> <span class="token punctuation">{</span>
-                                <em class="block-highlight">  <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// same as "sayHi: function(){...}"</span></em>
-                                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                  <span class="token punctuation">}</span>
-                                <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-                            </div>
+                                user.sayHi = function() { <br>
+                                alert("Hello!"); <br>
+                                }; <br>
+
+                                user.sayHi(); // Hello! <br>
+                            </code>
+                        </div>
 
                         <h6>“this” in methods</h6>
                         <div class="code">
-                            <div class="codebox__code" data-code="1">
-                                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
-                        name<span class="token operator">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
-                        age<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
-                      
-                        <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                      <em class="block-highlight">    <span class="token comment">// "this" is the "current object"</span>
-                          <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></em>
-                        <span class="token punctuation">}</span>
-                      
-                      <span class="token punctuation">}</span><span class="token punctuation">;</span>
-                      
-                      user<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John</span></code></pre>
-                              </div>
+                            <code>
+                                let user = { <br>
+                                name: "John", <br>
+                                age: 30, <br><br>
 
+                                sayHi() { <br>
+                                // "this" is the "current object" <br>
+                                alert(this.name); <br>
+                                } <br><br>
+
+                                }; <br><br>
+
+                                user.sayHi(); // John <br>
+                            </code>
                         </div>
                     </details>
                     <details class="sub">
@@ -150,30 +137,30 @@
                         <h6>Calling a Method</h6>
                         <div class="code">
                             <code>superman.fly()</code>
-                            <br>    
+                            <br>
                             <code>superman['fly']()</code>
                         </div>
                         <h6>Finding all the Properties of an Object</h6>
                         <div class="code">
                             <code>for(const key in superman) {<br>
                                 console.log(key + ": " + superman[key]);<br>
-                            }
-
-                            <br><br>
-                            <p>To make sure all properties are returned.</p>
-                            <br>
-                            for(const key in superman) {<br>
-                                if(superman.hasOwnProperty(key)){<br>
-                                    console.log(key + ": " + superman[key]);<br>
                                 }
-                            }
-                            <br>
-                            <br>
-                            <p>To return the array of keys, use the following code:</p>
-                            <br>
-                            for(const key of Object.keys(superman)) {<br>
+
+                                <br><br>
+                                <p>To make sure all properties are returned.</p>
+                                <br>
+                                for(const key in superman) {<br>
+                                if(superman.hasOwnProperty(key)){<br>
+                                console.log(key + ": " + superman[key]);<br>
+                                }
+                                }
+                                <br>
+                                <br>
+                                <p>To return the array of keys, use the following code:</p>
+                                <br>
+                                for(const key of Object.keys(superman)) {<br>
                                 console.log(key);<br>
-                            }
+                                }
 
                             </code>
                         </div>
@@ -197,11 +184,11 @@
                         <div class="code">
                             <code>
                                 const jla = {<br>
-                                    superman: { realName: 'Clark Kent' },<br>
-                                    batman: { realName: 'Bruce Wayne' },<br>
-                                    wonderWoman: { realName: 'Diana Prince" },<br>
-                                    flash: { realName: 'Barry Allen' },<br>
-                                    aquaman: { realName: 'Arthur Curry' },<br>
+                                superman: { realName: 'Clark Kent' },<br>
+                                batman: { realName: 'Bruce Wayne' },<br>
+                                wonderWoman: { realName: 'Diana Prince" },<br>
+                                flash: { realName: 'Barry Allen' },<br>
+                                aquaman: { realName: 'Arthur Curry' },<br>
                                 }
                             </code>
                         </div>
@@ -209,51 +196,91 @@
                         <div class="code">
                             <code>
                                 function greet({greeting,name,age}) {<br>
-                                    return `${greeting}! My name is ${name} and I am ${age} years old.`;<br>
+                                return `${greeting}! My name is ${name} and I am ${age} years old.`;<br>
                                 }
                             </code>
                         </div>
                     </details>
-                    <details class="sub">
-                        <summary>Events</summary>
-                    </details>
-                    <details class="sub">
-                        <summary>JSON</summary>
-                    </details>
-                </details>
-                <details>
-                    <summary>Weekly Report</summary>
-                    <h4>What did I do since the last meeting?</4>
-                    <p>Last week, I was reading more on reading. I also practicing on coding some the examples in the assigned reading.</p>
-                    <h4>What am going to do next?</4>
-                    <p>I want to make a good schedule for week four assignments.</p>
-                    <h4>What are my blockers?</4>
-                    <p>I did not have any blocker except work was very tough. It exausted me out that I just come home and sleep after.</p>
-                </details>
-                <details>
-                    <summary>Exercises</summary>
-                    <ul>
-                    <li><cite><a href="event.html">Exercise from the reading</a></cite></li>
-                    <li><cite><a href="starter.html">Starter1</a></cite></li>
-                    <li><cite><a href="starter2.html">Starter2</a></cite></li>
-                    </ul>
-                </details>
-                <details>
-                    <summary>Questions</summary>
-                    <ul>
-                    <li><cite>No Question</cite></li>
-                    </ul>
-                </details>
-            </div>
-    </div>
 
-    <div class="footer">
-        <h3>January 09, 2022 | WDD - 330<br>By Berny Fred</h3>
-    </div>
-    <script src="js/home.js"></script>
-    <script src="js/nav.js"></script>
-    <script>
-        loadIndex();
-    </script>
+                    <details class="sub">
+                        <summary>Arrow Functions</summary>
+                        <h4>Array.reduce()</h4>
+                        <div class="code">
+                            <code>
+                                [1,2,3,4,5].reduce( (acc,val) => prev + val );<br>
+                                << 15 
+                            </code> 
+                        </div> 
+                        <h4>Array.reduce()</h4>
+                        <p>The reduce() method also takes a second parameter after the callback, which is
+                            the initial value of the accumulator, acc. For example, we could total the
+                            numbers in an array, but starting at 10, instead of zero:
+                        </p>
+                        <div class="code">
+                            <code>
+                                        [1,2,3,4,5].reduce( (acc,val) => acc + val,10); // <---- second parameter of 10
+                                            here <br>
+                                            << 25 
+                            </code> 
+                        </div> 
+                        <h4>forEach()</h4>
+                        <div class="code">
+                            <code>
+                                colors.forEach( (color,index) => <br>
+                                console.log(`Color at position ${index}  is ${color}`) ); <br>                            
+                            </code>
+                        </div>
+                        <h4>map()</h4>
+                        <div class="code">
+                            <code>
+                             [1,2,3].map( square ) <br>
+                            << [1, 4, 9]  <br><hr>
+                            [1,2,3].map( x => 2 * x); <br>
+                            << [2,4,6]    
+                            </code>
+                                               
+                        </div>
+
+
+                </details> 
+                </details> 
+                    <details>
+                        <summary>Weekly Report</summary>
+                        <h4>What did I do since the last meeting?</4>
+                        <p>Last week, I was reading more on reading. I also practicing on
+                                    coding some the examples in the assigned reading.</p>
+                        <h4>What am going to do next?</4>
+                        <p>I want to make a good schedule for week four assignments.</p>
+                        <h4>What are my blockers?</4>
+                        <p>I did not have any blocker except work was very tough. It
+                                            exausted me out that I just come home and sleep after.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Exercises</summary>
+                        <ul>
+                            <li><cite><a href="event.html">Exercise from the reading</a></cite></li>
+                            <li><cite><a href="starter.html">Starter1</a></cite></li>
+                            <li><cite><a href="starter2.html">Starter2</a></cite></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Questions</summary>
+                        <ul>
+                            <li><cite>No Question</cite></li>
+                        </ul>
+                    </details>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>January 09, 2022 | WDD - 330<br>By Berny Fred</h3>
+        </div>
+        <script src="js/home.js"></script>
+        <script src="js/nav.js"></script>
+        <script>
+            loadIndex();
+        </script>
 </body>
+
 </html>
