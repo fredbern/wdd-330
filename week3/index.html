@@ -218,6 +218,11 @@
                         </p>
                         <div class="code">
                             <code>
+                                [1,2,3,4,5].reduce( (acc,val) => prev + val ); <br>
+                                << 15
+                            </code>
+                            <br>
+                            <code>
                                         [1,2,3,4,5].reduce( (acc,val) => acc + val,10); // <---- second parameter of 10
                                             here <br>
                                             << 25 
@@ -237,6 +242,16 @@
                             << [1, 4, 9]  <br><hr>
                             [1,2,3].map( x => 2 * x); <br>
                             << [2,4,6]    
+                            </code>
+                                               
+                        </div>
+
+                        <h4>filter()</h4>
+                        <div class="code">
+                            <code>
+                                const array = [ 0, 1, '0', false, true, 'hello' ]; <br>
+                                array.filter(Boolean); <br>
+                                << [ 1, '0', true, 'hello' ]
                             </code>
                                                
                         </div>
