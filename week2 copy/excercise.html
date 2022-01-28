@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="sitename">
+            <h2>WDD 330</h2>
+        </div>
+        <nav id="primaryNav">
+            <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+            <ul>
+                <li class="active"><a class="active" href="../">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+    </div>
+    <div class="main">
+
+        <h1>Quiz Exercise From the Reading</h1>
+        <section>
+            <button id="button" onclick="start(quiz)">Start Quiz</button>
+            <div id="score"></div>
+        </section>
+
+        <script>
+            const quiz = [
+                ["What is the current LDS President's first name?", "Russell"],
+                ["What is the first LDS President's first name", "Joseph"]
+            ];
+
+            function start(quiz) {
+                let score = 0;
+
+                // main game loop
+                for (const [question, answer] of quiz) {
+                    const response = ask(question);
+                    check(response, answer);
+                }
+                // end of main game loop
+
+                gameOver();
+
+                // function declarations
+                function ask(question) {
+                    return prompt(question);
+                }
+
+                function check(response, answer) {
+                    if (response === answer) {
+                        alert('Correct!');
+                        score++;
+                    } else {
+                        alert(`Wrong! The correct answer was ${answer}`);
+                    }
+                }
+
+                function gameOver() {
+                    document.getElementById('score').innerHTML = `Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`;
+                }
+            }
+        </script>
+    </div>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
