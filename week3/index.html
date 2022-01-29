@@ -113,6 +113,7 @@
                             </code>
                         </div>
                     </details>
+
                     <details class="sub">
                         <summary>Objects</summary>
                         <p></p>
@@ -212,77 +213,107 @@
                             </code> 
                         </div> 
                         <h4>Array.reduce()</h4>
-                        <p>The reduce() method also takes a second parameter after the callback, which is
+                        <p>
+                            The reduce() method also takes a second parameter after the callback, which is
                             the initial value of the accumulator, acc. For example, we could total the
                             numbers in an array, but starting at 10, instead of zero:
                         </p>
                         <div class="code">
                             <code>
                                 [1,2,3,4,5].reduce( (acc,val) => prev + val ); <br>
-                                << 15
-                            </code>
+                                << 15 
+                            </code> 
                             <br>
                             <code>
-                                        [1,2,3,4,5].reduce( (acc,val) => acc + val,10); // <---- second parameter of 10
-                                            here <br>
-                                            << 25 
+                                [1,2,3,4,5].reduce( (acc,val) => acc + val,10); // <---- second
+                                parameter of 10 here <br> << 25 
                             </code> 
                         </div> 
                         <h4>forEach()</h4>
                         <div class="code">
                             <code>
                                 colors.forEach( (color,index) => <br>
-                                console.log(`Color at position ${index}  is ${color}`) ); <br>                            
+                                console.log(`Color at position ${index} is
+                                ${color}`) ); <br>
                             </code>
                         </div>
                         <h4>map()</h4>
                         <div class="code">
-                            <code>
-                             [1,2,3].map( square ) <br>
-                            << [1, 4, 9]  <br><hr>
+                        <code>
+                            [1,2,3].map( square ) <br>
+                            << [1, 4, 9] <br>
+                            <hr>
                             [1,2,3].map( x => 2 * x); <br>
-                            << [2,4,6]    
-                            </code>
-                                               
-                        </div>
-
+                            << [2,4,6] 
+                        </code> 
+                        </div> 
                         <h4>filter()</h4>
                         <div class="code">
-                            <code>
-                                const array = [ 0, 1, '0', false, true, 'hello' ]; <br>
-                                array.filter(Boolean); <br>
-                                << [ 1, '0', true, 'hello' ]
-                            </code>
-                                               
-                        </div>
+                        <code>
+                            const array = [ 0, 1, '0', false,
+                            true, 'hello' ]; <br>
+                            array.filter(Boolean); <br>
+                            << [ 1, '0' , true, 'hello' ]
+                        </code> 
+                        </div> 
                     </details>
 
                 </details> 
-                <details>
-                    <summary>Weekly Report</summary>
-                    <h4>What did I do since the last meeting?</4>
-                    <p>Last week, I was more into reading. Last week, I was reading more on reading. I also practice coding some of the examples in the assigned reading.</p>
-                    <h4>What am I going to do next?</4>
-                    <p>I want to make a good schedule for week four assignments.</p>
-                    <h4>What are my blockers?</4>
-                    <p>
-                        I did not have any blocker, except work was very tough. It exhausted me that I just come home and sleep when I come home.
-                    </p>
-                </details>
-                <details>
-                    <summary>Exercises</summary>
-                    <ul>
-                        <li><cite><a href="event.html">Exercise from the reading</a></cite></li>
-                        <li><cite><a href="starter.html">Starter1</a></cite></li>
-                        <li><cite><a href="starter2.html">Starter2</a></cite></li>
-                    </ul>
-                </details>
-                <details>
-                    <summary>Questions</summary>
-                    <ul>
-                        <li><cite>No Question</cite></li>
-                    </ul>
-                </details>
+                <style>
+                    .report p{
+                        font-weight: 300;
+                        font-size: 14px;
+                    }
+                    .report h4{
+                        font-weight: 300;
+                        font-size: 14px;
+                    }
+                </style>           
+                <details class="report">
+                <summary>Weekly Report</summary>
+                <h4>What did I do since the last
+                    meeting?</4>
+                    <p>Last week, I was more
+                        into reading. Last week,
+                        I was reading more on
+                        reading. I also practice
+                        coding some of the
+                        examples in the assigned
+                        reading.</p>
+                    <h4>What am I going to do
+                        next?</4>
+                        <p>I want to make a good
+                            schedule for week
+                            four assignments.
+                        </p>
+                        <h4>What are my
+                            blockers?</4>
+                            <p>
+                                I did not have
+                                any blocker,
+                                except work was
+                                very tough. It
+                                exhausted me
+                                that I just come
+                                home and sleep
+                                when I come
+                                home.
+                            </p>
+                    </details>
+                    <details>
+                        <summary>Exercises</summary>
+                        <ul>
+                            <li><cite><a href="event.html">Exercise from the reading</a></cite></li>
+                            <li><cite><a href="starter.html">Starter1</a></cite></li>
+                            <li><cite><a href="starter2.html">Starter2</a></cite></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Questions</summary>
+                        <ul>
+                            <li><cite>No Question</cite></li>
+                        </ul>
+                    </details>
             </div>
         </div>
 
