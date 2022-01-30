@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <script src="script.js"></script>
+    <style>
+        .main-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 20px auto;
+            background-color: rgb(125, 179, 233);
+            width: 300px;
+            height: 300px;
+        }
+        .child {
+            padding: 30px;
+            font-size: 30px;
+            text-align: center;
+            background-color: rgb(243, 247, 246);   
+        }
+
+        .inactive:disabled {
+            padding: 33%;
+            font-size: 30px;
+            text-align: center; 
+            background-color: blueviolet;
+        }
+        .child:nth-child(1) {
+            border-right: solid  2px black;
+            border-bottom: solid  2px black;
+        }
+        .child:nth-child(2) {
+            border-right: solid  2px black;
+            border-bottom: solid  2px black;
+        }
+        .child:nth-child(3) {
+            border-bottom: solid  2px black;
+            
+        }
+        .child:nth-child(4) {
+           border-right: solid  2px black; 
+           border-bottom: solid  2px black;
+        }
+        .child:nth-child(5) {
+            border-right: solid  2px black;
+            border-bottom: solid  2px black;
+            
+        }
+        .child:nth-child(6) {
+            border-bottom: solid  2px black;
+        }
+        .child:nth-child(7) {
+            border-right: solid  2px black;
+        }
+        .child:nth-child(8) {
+            border-right: solid  2px black;
+        }
+    </style>
+</head>
+<body>
+    <section class="main-board">
+        <div class="child" id="1"></div>
+        <div class="child" id="2"></div>
+        <div class="child" id="3"></div>
+        <div class="child" id="4"></div>
+        <div class="child" id="5"></div>
+        <div class="child" id="6"></div>
+        <div class="child" id="7"></div>
+        <div class="child" id="8"></div>
+        <div class="child" id="9"></div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.child').forEach(item => {
+        item.addEventListener('click', event => {
+            const x = document.getElementsByTagName("div")[1].id;
+            console.log('log');
+            console.log(x);
+            })
+        })
+    </script>
+
+</body>
+</html>
