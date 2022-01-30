@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Form</h1>
+    <h2>Form controls</h2>
+    <div class="topic-form">
+        <h3>A Searching Example</h3>
+        <form name='search' action='/search'>
+            <input name='searchInput'>
+            <button type='submit'>Search</button>
+        </form>
+        <script src="main.js"></script>
+    </div>
+    <div class="topic-form">
+        <h2>Accessing form elements</h2>
+        <code>
+            const form = document.forms[0];<br>
+            const form = document.getElementsByTagname('form')[0];<br>
+            const form = document.forms.search;<br>
+            const form = document.forms['search'];<br>
+            const [input,button] = form.elements;<br>
+            const input = form.searchInput <br>
+            const input = form['searchInput'] <br>
+        </code>
+    </div>
+    <div class="topic-form">
+    <h2>Form properties and methods</h2>
+    <h3>Method</h3>
+    <p>form.submit() method will submit the form automatically.</p>
+    <p>Form can be submitted manually the user employing a button or input elemnts with a type attibute of <span>submit</span>, or even an iput elemnet with a <span>type</span> attribute of <span>image</span>:</p>
+    <code>
+    &lt;button type='submit'&gt;Submit&lt;/button&gt;<br>
+    &lt;input type='submit' value='Submit'&gt<br>
+    &lt;input type='image' src='button.png'&gt<br>
+    </code>
+    <p><span>form.reset()</span> method will reset allt eh form controls back to their initial values specific in the HTML.</p>
+    &lt;button type='reset'&gt;Reset&lt;button&gt;
+    <h3>Properties</h3>
+    The <span>form.action</span> property can be used to set the <span>action</span> attribute of a form, so it’s sent to a different URL to be processed on the server:
+    <p>form.action = '/an/other.url'</p>
+    </div>
+    <div class="topic-form">
+    <h2>Form events</h2>
+    
+    
+    </div>
+    
+    <h2>Submiting a form</h2>
+    <h2>Retrieving and changing values from a form</h2>
+    <h2>Form valitation</h2>
+    <h2>Our project - add a form for answering the question</h2>
+    
+</body>
+</html>
