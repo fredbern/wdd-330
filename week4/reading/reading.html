@@ -10,16 +10,8 @@
 
 </style>
 <body>
+    <div class="submain">
     <h1>Form</h1>
-    <h2>Form controls</h2>
-    <div class="topic-form">
-        <h3>A Searching Example</h3>
-        <form name='search' action='/search'>
-            <input name='searchInput'>
-            <button type='submit'>Search</button>
-        </form>
-        <script src="main.js"></script>
-    </div>
     <div class="topic-form">
         <h2>Accessing form elements</h2>
         <code>
@@ -45,19 +37,24 @@
     <p><span>form.reset()</span> method will reset allt eh form controls back to their initial values specific in the HTML.</p>
     &lt;button type='reset'&gt;Reset&lt;button&gt;
     <h3>Properties</h3>
-    The <span>form.action</span> property can be used to set the <span>action</span> attribute of a form, so it’s sent to a different URL to be processed on the server:
+    <p>The <span>form.action</span> property can be used to set the <span>action</span> attribute of a form, so it’s sent to a different URL to be processed on the server:</p>
     <p>form.action = '/an/other.url'</p>
     </div>
     <div class="topic-form">
-    <h2>Form events</h2>
-    
-    
-    </div>
-    
     <h2>Submiting a form</h2>
-    <h2>Retrieving and changing values from a form</h2>
-    <h2>Form valitation</h2>
-    <h2>Our project - add a form for answering the question</h2>
-    
+    <code>
+        const form = document.forms['search'];<br>
+        form.addEventListener ('submit', search, false);<br><br>
+        
+        function search() {<br>
+            alert(' Form Submitted');<br>
+        } 
+    </code>
+    </div>        
+    </div>
+    <div class="sub-main">
+        
+    </div>
+
 </body>
 </html>

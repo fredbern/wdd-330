@@ -73,10 +73,11 @@
 
     <script>
         document.querySelectorAll('.child').forEach(item => {
-        item.addEventListener('click', event => {
-            const x = document.getElementsByTagName("div")[1].id;
-            console.log('log');
+        item.addEventListener('touchend', event => {
+            const x = item.id;
             console.log(x);
+            document.getElementById(x).innerHTML= "x";
+
             })
         })
     </script>

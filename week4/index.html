@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="sitename">
+                <h2>WDD 330</h2>
+            </div>
+            <nav id="primaryNav">
+                <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+                <ul>
+                    <li class="active"><a class="active" href="../">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+        </div>
+    </div>
+    <style>
+        .sub details {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sub summary {
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        .sub div {
+            margin-left: 25px;
+            margin-bottom: 0;
+            padding-top: 15px;
+
+            font-size: small;
+        }
+
+        .sub h6 {
+            margin-top: 20px;
+            margin-left: 26px;
+            padding: 0;
+        }
+
+        code p {
+            margin: 3px 0;
+        }
+    </style>
+    <div class="container">
+        <div class="other-contents">
+            <div class="main">
+                <h1>My notes</h1>
+                <h2>Week 04 - Submission</h2>
+                <hr>
+                <details>
+                    <style>
+                        .notes {
+                            margin-left: 20px;
+                        }
+                        .notes h1{
+                            margin: 10px 0 0 0;
+                            font-size: 18px;
+                        }
+                        .notes h2{
+                            margin-top: 15px;
+                            font-size: 16px;
+                        }
+                        .notes h3{
+                            margin-top: 10px;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                        .notes p {
+                            margin-left: 0;
+                            font-size: 14px;
+                        }
+                        .notes .code {
+                            margin-top: 10px;
+                            background-color: rgb(173, 166, 166);
+                        }
+                        .notes span {
+                            font-style: italic;
+                            background-color: rgb(173, 166, 166);
+                        }
+                    </style>
+                    <summary>Reading notes</summary>
+                        <div class="notes">
+
+                        
+                            <h1>Form</h1>
+                            <h2>Accessing form elements</h2>
+                            <div class="code">
+                             <code>
+                                const form = document.forms[0];<br>
+                                const form = document.getElementsByTagname('form')[0];<br>
+                                const form = document.forms.search;<br>
+                                const form = document.forms['search'];<br>
+                                const [input,button] = form.elements;<br>
+                                const input = form.searchInput <br>
+                                const input = form['searchInput'] <br>
+                            </code>   
+                            </div>
+                            
+                            <h2>Form properties and methods</h2>
+                            <h3>Method</h3>
+                            <p><span>form.submit()</span> method will submit the form automatically.</p>
+                            <p>Form can be submitted manually the user employing a button or input elemnts with a type attibute of <span>submit</span>, or even an iput elemnet with a <span>type</span> attribute of <span>image</span>:</p>
+                            <div class="code">
+                            <code>
+                            &lt;button type='submit'&gt;Submit&lt;/button&gt;<br>
+                            &lt;input type='submit' value='Submit'&gt<br>
+                            &lt;input type='image' src='button.png'&gt<br>
+                            </code>    
+                            </div>
+                            
+                            <p><span>form.reset()</span> method will reset allt eh form controls back to their initial values specific in the HTML.</p>
+                            <p>
+                            &lt;button type='reset'&gt;Reset&lt;button&gt;    
+                            </p>
+                            
+                            <h3>Properties</h3>
+                            <p>The <span>form.action</span> property can be used to set the <span>action</span> attribute of a form, so it’s sent to a different URL to be processed on the server:</p>
+                            <p>form.action = '/an/other.url'</p>
+
+
+                            <h2>Submiting a form</h2>
+                            <div class="code">
+                            <code>
+                                const form = document.forms['search'];<br>
+                                form.addEventListener ('submit', search, false);<br><br>
+                                
+                                function search() {<br>
+                                    alert(' Form Submitted');<br>
+                                } 
+                            </code>    
+                            </div>
+                            
+                        </div>
+                    </details>
+
+                </details> 
+                <style>
+                    .report p{
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                    .report h4{
+                        font-weight: 400;
+                        font-size: 16px;
+                    }
+                </style>           
+                <details class="report">
+                <summary>Weekly Report</summary>
+                <h4>What did I do since the last
+                    meeting?</4>
+                    <p>
+                        I was reading more on chapter 8 of JAVASCRIPT: NOVICE TO NINJA, 2ND EDITION.
+                    </p>
+                    <h4>What am I going to do
+                        next?</4>
+                        <p>
+                            Next week, I am planning to reread on OOP Programming in Javascript.
+                        </p>
+                        <h4>What are my
+                            blockers?</4>
+                            <p>
+                                Building function for a Tic Tac Toe app was one of my blockers. I could not figure out the best solution for my app. I tried many functios just to make it work but it did not work.
+                                In the exercises section below, I posted my tic tak toe app.
+                            </p>
+                    </details>
+                    <details>
+                        <summary>Exercises</summary>
+                        <ul>
+                            <li><cite><a href="board/index.html">My unfinished tic tac toe app</a></cite></li>
+                            <li><cite><a href="teachersolution/index.html">Teacher Solution</a></cite></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Questions</summary>
+                        <ul>
+                            <li><cite>No Question</cite></li>
+                        </ul>
+                    </details>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>January 09, 2022 | WDD - 330<br>By Berny Fred</h3>
+        </div>
+        <script src="js/home.js"></script>
+        <script src="js/nav.js"></script>
+        <script>
+            loadIndex();
+        </script>
+</body>
+
+</html>
