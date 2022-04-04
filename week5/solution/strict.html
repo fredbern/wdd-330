@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stric</title>
+</head>
+<body>
+    <script>
+        function canYouSpotTheProblem() {
+    "use strict";
+    for (let counter = 0; counter < 10; counter++) {
+    console.log("Happy happy");
+  }
+}
+
+canYouSpotTheProblem();
+// → ReferenceError: counter is not defined
+    </script>
+</body>
+</html>

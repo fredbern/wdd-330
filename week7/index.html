@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="sitename">
+                <h2>WDD 330</h2>
+            </div>
+            <nav id="primaryNav">
+                <button class="close-button" id="menuBtn" onclick="toggleMenu()">X Close</button>
+                <ul>
+                    <li class="active"><a class="active" href="../">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="open-button" id="menuBtn1" onclick="toggleMenu()">&#9776; Open</button>
+        </div>
+    </div>
+    <style>
+        .sub details {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sub summary {
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        .sub div {
+            margin-left: 25px;
+            margin-bottom: 0;
+            padding-top: 15px;
+
+            font-size: small;
+        }
+
+        .sub h6 {
+            margin-top: 20px;
+            margin-left: 26px;
+            padding: 0;
+        }
+
+        code p {
+            margin: 3px 0;
+        }
+    </style>
+    <div class="container">
+        <div class="other-contents">
+            <div class="main">
+                <h1>My notes</h1>
+                <h2>Week 07 - Submission</h2>
+                <hr>
+                <details>
+                    <style>
+                        .notes {
+                            margin-left: 20px;
+                        }
+                        .notes h1{
+                            margin: 10px 0 0 0;
+                            font-size: 18px;
+                        }
+                        .notes h2{
+                            margin-top: 15px;
+                            font-size: 16px;
+                        }
+                        .notes h3{
+                            margin-top: 10px;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                        .notes p {
+                            margin-left: 0;
+                            font-size: 14px;
+                        }
+                        .notes .code {
+                            margin-top: 10px;
+                            background-color: rgb(173, 166, 166);
+                        }
+                        .notes span {
+                            font-style: italic;
+                            background-color: rgb(173, 166, 166);
+                        }
+                    </style>
+                    <summary>Reading notes</summary>
+                        <div class="notes">
+
+                        
+                            <h1>Ajax</h1>
+                            <p>
+                                Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to be updated in response to user events, while the rest of the program continues to run.
+                            </p>
+                                <ul>
+                                    <li>
+                                        <h5>Asyncronous</h5>
+                                        <p>
+                                            When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. By using callbacks to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>
+                                            JavaScript
+                                        </h5>
+                                        <p>
+                                            JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be updated in real time.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>
+                                            XML
+                                        </h5>
+                                        <p>
+                                            When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more lightweight and easier to parse than XML. 
+                                        </p>
+                                    </li>
+                                </ul>
+                            <h2>The Fetch API</h2>
+                            <h3>Basic Usage</h3>
+                            <p>The Fetch API provides a global <span class="green">fetch()</span> method with only one url</p>
+                            <p>
+                                <code>
+                                    fetch(url)<br>
+                                    .then( // code that handles the response )
+                                    .catch(// code that runs if the server returns an error )
+                                    
+                                </code>
+                            <p>
+                            <h3>
+                                Response Interface
+                            </h3>
+                            <ul>
+                                The response interface is returned when the promise is fulfilled. Reponse objects have a number of properties and methods.
+                                <li>
+                                    Ok property
+                                </li>
+                                <li>
+                                    headers object
+                                </li>
+                                <li>
+                                    url
+                                </li>
+                                <li>
+                                    redirect method
+                                </li>
+                                <li>
+                                    type
+                                </li>
+                                <li>
+                                    blob() method
+                                </li>
+
+                            </ul>
+                            <p>
+                                const url = 'https:example.com/data';<br>
+														<br>
+
+                                fetch(url)											<br>
+                                .then((response) => {							<br>
+                                    if(response.ok) {							<br>
+                                        return response;					<br>
+                                    }													<br>
+                                    throw Error(response.statusText);<br>
+                                })														<br>	
+                                .then( response => // do something with response )			<br>
+                                .catch( error => console.log('There was an error!') )		<br>
+                            </p>
+                            <br>
+                            <h4>
+                                The five most commonly used verbs when dealing with resources on the web
+                            </h4>
+                            <br>
+                            <ul>
+                                <li>
+                                    GET requests to retrieve resources
+                                </li>
+                                <li>
+                                    POST requests, usually used to create a resource but can actually perform any task
+                                </li>
+                                <li>
+                                    PUT requests to upsert, which means insert a resource or update it entirely
+                                </li>
+                                <li>
+                                    PATCH requests to make partial updates to a resource
+                                </li>
+                                <li>
+                                    DELETE requests to delete a resources.
+                                </li>
+                            </ul>
+                            <br>
+                            <br>
+                            <p>
+                                A constructor function is used to create a new Request object. An example is shown below:
+                            </p>
+                            <br>
+                            <code>
+                                const request = new Request('https://example.com/data', <br>
+                                    method: 'GET', <br>
+                                    mode: 'cors', <br>
+                                    redirect: 'follow', <br>
+                                    cache: 'no-cache' <br>
+                                });
+                            </code>
+                            <br>
+                            <h2>
+                                Header Interface
+                            </h2>
+                            <p>
+                                HTTP headers are used to pass on any additional information about a request or response.
+                            </p>
+                            <code>
+                                const headers = new Headers();
+                            </code><br>
+                            <code>
+                                const headers = new Headers({ 'Content-Type': 'text/plain', 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })
+                            </code><br>
+                            <p>
+                                Headers object includes the following properties and methods to access headers' information.
+                            </p>
+                            <code>
+                                has() – Can be used to check if the headers object contains the header provided as an argument.
+                                <br><br>
+                                headers.has('Content-Type');<br>
+                                << true <br>
+                                get() - Returns the value of the header provided as an argument <br>
+                                <br>
+                                headers.get('Content-Type');<br>
+                                << 'text/plain' <br>
+                                set() – Can be used to set a value of an already existing header, or create a new header with the value provided as an argument if it does not already exist. <br>
+                                headers.set('Content-Type', 'application/json'); <br>
+                                append() – Adds a new header to the headers object. <br>
+                                headers.append('Accept-Encoding','gzip,deflate'); <br>
+                                delete() – Removes the header provided as an argument. <br>
+                                headers.delete('Accept-Encoding') <br>
+                            </code>
+
+                            <p>
+                                keys(), values() and entries() – Iterators that can be used to iterate over the headers key, values or entries (key and value pairs).
+                            </p>
+                            <code>
+                                for(const entry of headers.entries(){ <br>
+                                    console.log(entry); <br>
+                                    } <br>
+                                    << [ 'Content-Type', 'application/json' ] <br>
+                            </code>
+
+                            <h2>Putting It All Together</h2>
+
+                            <code class="codelast">
+                                const url = 'https:example.com/data'; <br>
+                                const headers = new Headers({ 'Content-Type': 'text/plain', <br>
+                                 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' }) <br>
+
+                                const request = (url,{ <br>
+                                    headers: headers <br>
+                                }) <br>
+                                <span class="green">//header ends here</span> <br><br>
+                                fetch(request) <br>
+                                .then( function(response) { <br>
+                                    if(response.ok) { <br>
+                                        return response; <br>
+                                    } <br>
+                                    throw Error(response.statusText); <br>
+                                }) <br>
+                                <span class="green">//request ends here</span> <br>
+                                .then( response => // do something with response ) <br>
+                                .catch( error => console.log('There was an error!') ) <br>
+                                <span class="green">//response ends here</span> <br>
+                            </code>
+                        </div>
+                    </details>
+
+                </details> 
+                <style>
+                    .report p{
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                    .report h4{
+                        font-weight: 400;
+                        font-size: 16px;
+                    }
+                </style>           
+                <details class="report">
+                <summary>Weekly Report</summary>
+                <h4>What did I do since the last
+                    meeting?</4>
+                    <p>
+                        Last week I was spending time reading on ajax and how to write codes on testing.
+                    </p>
+                    <h4>What am I going to do
+                        next?</4>
+                        <p>
+                            Next week, I am planning to reread OOP Programming in Javascript.
+                        </p>
+                        <h4>What are my
+                            blockers?</4>
+                            <p>
+                                Building function for a Tic Tac Toe app was one of my blockers. I could not figure out the best solution for my app. I tried many functions to make it work, but it did not. I posted my first trial tic tak toe app on the exercises second.
+                            </p>
+                    </details>
+                    <details>
+                        <summary>Exercises</summary>
+                        <ul>
+                            <li><cite><a href="board/index.html">My unfinished tic tac toe app</a></cite></li>
+                            <li><cite><a href="teachersolution/index.html">Teacher Solution</a></cite></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Questions</summary>
+                        <ul>
+                            <li><cite>I had difficulty finding functions for the tic tac toe app, but the teacher’s solution helped me a lot.</cite></li>
+                        </ul>
+                    </details>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>January 09, 2022 | WDD - 330<br>By Berny Fred</h3>
+        </div>
+        <script src="js/home.js"></script>
+        <script src="js/nav.js"></script>
+        <script>
+            loadIndex();
+        </script>
+</body>
+
+</html>
